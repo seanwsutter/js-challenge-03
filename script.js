@@ -3,6 +3,10 @@ var generateBtn = document.querySelector("#generate");
 var pwLength;
 var confirmUppercase;
 var confirmLowercase;
+// // make libraries to randomize?
+// var lowercase = ["a", "b", "c"]
+// var upperCase = ["A", "B", "C"]
+// var numbers = [1, 2, 3]
 
 // Write password to the #password input
 function writePassword() {
@@ -31,11 +35,27 @@ function generatePassword() {
 
   }
   else {
-    confirmLowercase = confirm("lowercase?")
-    confirmUppercase = confirm("uppercase?")
+    confirmLowercase = confirm("password contain lowercase?")
+    console.log("has lowercase:", confirmLowercase);
+    confirmUppercase = confirm("password cotain uppercase?")
+    console.log("has uppercase:", confirmUppercase);
+    confirmNumbers = confirm("password will contain numbers?")
+    console.log("has numbers:", confirmNumbers);
   }
 }
+
+//all true
+if (confirmLowercase === true && confirmUppercase === true && confirmNumbers === true) {
+  console.log("all true");
+}
+// where is this stored, how to use
+
 // else {
 //   confirmUppercase=confirm("uppercase>")
 // }
-
+// var passwordGenT = [pwLength, confirmLowercase, confirmUppercase]
+// var passwordGen = {
+//   pwLength,
+//   confirmLowercase,
+//   confirmUppercase,
+// }

@@ -3,10 +3,20 @@ var generateBtn = document.querySelector("#generate");
 var pwLength;
 var confirmUppercase;
 var confirmLowercase;
+var confirmNumbers;
+var confirmSpecials;
+var userOptions;
 // // make libraries to randomize?
 // var lowercase = ["a", "b", "c"]
 // var upperCase = ["A", "B", "C"]
 // var numbers = [1, 2, 3]
+
+var lowercaseLib = ["a", "b", "c"]
+var uppercaseLib = ["A", "B", "C"]
+var numbersLib = [1, 2, 3]
+var specialsLib = ["!", "@", "#"]
+// var specialsLib = [!, @, #]
+
 
 // Write password to the #password input
 function writePassword() {
@@ -23,7 +33,7 @@ generateBtn.addEventListener("click", writePassword);
 console.log("testing..");
 
 function generatePassword() {
-  pwLength = prompt("Password length, choose minimum 8 characters maximum 128 characters");
+  pwLength = prompt("Password length? choose minimum 8 characters maximum 128 characters");
   console.log(pwLength); // check 
 
   if (!pwLength) {
@@ -41,13 +51,34 @@ function generatePassword() {
     console.log("has uppercase:", confirmUppercase);
     confirmNumbers = confirm("password will contain numbers?")
     console.log("has numbers:", confirmNumbers);
-  }
-}
+    confirmSpecials = confirm("password contains special characters?")
+    console.log("has special characters:", confirmSpecials);
+  };
 
-//all true
-if (confirmLowercase === true && confirmUppercase === true && confirmNumbers === true) {
-  console.log("all true");
+  // if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials === false) {
+  //   userOptions = prompt("please select criteria to generate password")}
+
+  if (!confirmLowercase && !confirmUppercase && !confirmNumbers && !confirmSpecials) {// if all are false
+    userOptions = prompt("please select criteria to generate password")
+  }
+
+  else if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials) {
+
+    userOptions = [lowercaseLib, uppercaseLib, numbersLib, specialsLib]
+
+
+    console.log(userOptions);
+  }
+  console.log(userOptions);
 }
+console.log(userOptions);
+// userOptions = {
+//   lowercaseLib,
+//   upperCaseLib,
+//   numbersLib,
+//   specialsLib
+// }
+//all true
 // where is this stored, how to use
 
 // else {

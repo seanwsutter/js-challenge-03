@@ -6,7 +6,6 @@ var confirmLowercase;
 var confirmNumbers;
 var confirmSpecials;
 var userOptions;
-// // make libraries to randomize?
 // var lowercase = ["a", "b", "c"]
 // var upperCase = ["A", "B", "C"]
 // var numbers = [1, 2, 3]
@@ -57,7 +56,6 @@ function generatePassword() {
 
   // if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials === false) {
   //   userOptions = prompt("please select criteria to generate password")}
-  // pw length?
 
   if (!confirmLowercase && !confirmUppercase && !confirmNumbers && !confirmSpecials) {// if all are false
     userOptions = prompt("please select criteria to generate password")
@@ -69,7 +67,19 @@ function generatePassword() {
     console.log("criteria:", userOptions);
 
 
-  };
+  } else if (!confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials) { // no lowercase
+    userOptions = uppercaseLib.concat(numbersLib, specialsLib);
+  } else if (confirmLowercase && !confirmUppercase && confirmNumbers && confirmSpecials) { // no uppercase
+    userOptions = lowercaseLib.concat(numbersLib, specialsLib);
+  } else if (confirmLowercase && confirmUppercase && !confirmNumbers && confirmSpecials) { // no numbers
+    userOptions = lowercaseLib.concat(uppercaseLib, specialsLib);
+  } else if (confirmLowercase && confirmUppercase && confirmNumbers && !confirmSpecials) { // no specials
+    userOptions = lowercaseLib.concat(uppercaseLib, numbersLib);
+  } else if (!confirmLowercase && !confirmUppercase && confirmNumbers && confirmSpecials) { // only numbers & specials
+    userOptions = numbersLib.concat(specialsLib);
+  } else if (!confirmLowercase && !confirmUppercase && !confirmNumbers && confirmSpecials) { // only specials
+    userOptions = (specialsLib)
+  }
 
   // console.log(userOptions);
 

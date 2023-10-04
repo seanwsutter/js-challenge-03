@@ -2,8 +2,14 @@
 
 ## Randomly generate a password that meets certain criteria
 
-Using the prompt tools build into javascript, have the user select criteria for a password that wil be randomly generated based on their selection of the criteria.
+Using the built-in prompt tool in javascript, the user will select criteria for a password that will then be randomly generated based on the selection of the criteria.
 
 * [Github Repository](https://github.com/seanwsutter/js-challenge-03)
 
 * [Gituhub Pages](https://seanwsutter.github.io/js-challenge-03/)
+
+
+
+
+[Preview JPG](https://i.imgur.com/lRewRRW.png)
+

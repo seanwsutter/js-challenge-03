@@ -57,21 +57,52 @@ function generatePassword() {
 
   // if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials === false) {
   //   userOptions = prompt("please select criteria to generate password")}
+  // pw length?
 
   if (!confirmLowercase && !confirmUppercase && !confirmNumbers && !confirmSpecials) {// if all are false
     userOptions = prompt("please select criteria to generate password")
+  } else if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials) {
+
+    // userOptions = [lowercaseLib, uppercaseLib, numbersLib, specialsLib]
+    userOptions = lowercaseLib.concat(uppercaseLib, numbersLib, specialsLib);
+
+    console.log("criteria:", userOptions);
+
+
+  };
+
+  // console.log(userOptions);
+
+  // var newPassword = "";
+  var newPassword = [];
+
+
+  for (var i = 0; i < pwLength; i++) {
+
+
+    var criteria = userOptions[Math.floor(Math.random() * userOptions.length)];
+    newPassword.push(criteria);
+    console.log(criteria);
+
+
   }
 
-  else if (confirmLowercase && confirmUppercase && confirmNumbers && confirmSpecials) {
-
-    userOptions = [lowercaseLib, uppercaseLib, numbersLib, specialsLib]
-
-
-    console.log(userOptions);
-  }
-  console.log(userOptions);
+  var password = newPassword.join("");
+  console.log("new password:", password);
+  return password;
 }
-console.log(userOptions);
+
+
+
+
+
+
+
+
+
+
+
+
 // userOptions = {
 //   lowercaseLib,
 //   upperCaseLib,

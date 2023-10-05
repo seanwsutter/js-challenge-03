@@ -10,6 +10,6 @@ Using the built-in prompt tool in javascript, the user will select criteria for 
 
 
 
-
-[Preview JPG](https://i.imgur.com/lRewRRW.png)
+* Preview Screenshot:
+![Preview JPG](https://i.imgur.com/lRewRRW.png)
 
